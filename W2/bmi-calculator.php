@@ -23,7 +23,9 @@ $bmi = $weight/($height * $height);
 }
 ?>
 
-<?php
+<?php if ($bmi) {
 echo $bmi;
+}
 ?>
+
 </html>
