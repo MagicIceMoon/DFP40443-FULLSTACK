@@ -5,7 +5,7 @@
 <body>
 
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-<label>Height (cm)</label>
+<label>Height (m)</label>
 <input name="heightVal">
 <label>Weight (kg)</label>
 <input name="weightVal">
