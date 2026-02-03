@@ -6,5 +6,5 @@ return [
     'version' => "1.0.0",
     "admin_user" => "root",
     "admin_password" => "12345"
-]
+];
 ?>

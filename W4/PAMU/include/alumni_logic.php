@@ -10,7 +10,7 @@ $pages = [
 function generatedMenu($item){
     $html = "";
     foreach ($item as $page => $url) {
-        $html .= "<li><a href='$url'></a></li>";
+        $html .= "<li><a href='$url'>$page</a></li>";
     };
 
     return $html;
