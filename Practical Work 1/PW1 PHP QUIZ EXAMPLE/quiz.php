@@ -17,6 +17,11 @@ $questions = [
         'question' => 'Which function is used to start a session?',
         'options' => ['start_session()', 'session_begin()', 'session_start()'],
         'answer' => 'session_start()'
+    ],
+    [
+        'question' => 'How do you define a constant?',
+        'options' => ['const()', 'define()', 'var()'],
+        'answer' => 'define()'
     ]
     // Add more questions here
 ];
