@@ -5,3 +5,6 @@
 </footer>
 </body>
 <html></html>
+<?php
+require_once("config/app_config.php");
+?>

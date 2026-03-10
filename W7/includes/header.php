@@ -1,3 +1,6 @@
+<?php
+require_once("config/app_config.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +12,6 @@
   overflow: hidden;
 }
 
-/* Style the links inside the navigation bar */
 .topnav a {
   float: left;
   color: #f2f2f2;
@@ -19,13 +21,11 @@
   font-size: 17px;
 }
 
-/* Change the color of links on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Add a color to the active/current link */
 .topnav a.active {
   background-color: #04AA6D;
   color: white;
