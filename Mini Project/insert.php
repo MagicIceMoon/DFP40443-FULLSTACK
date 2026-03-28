@@ -53,8 +53,8 @@ include("includes/header.php");
         </div>
         <div class="card-body p-4">
             
-            <?php if ($message): ?>
-                <div class="alert alert-danger"><?php echo $message; ?></div>
+            <?php if ($mesej): ?>
+                <div class="alert alert-danger"><?php echo $mesej; ?></div>
             <?php endif; ?>
 
             <form method="POST" action="">
