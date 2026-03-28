@@ -1,6 +1,5 @@
 <?php
 session_start();
-// Hanya admin sedia ada sahaja boleh tambah admin baru
 if (!isset($_SESSION["id"]) || $_SESSION["role"] != "admin") {
     header("Location: login.php");
     exit();

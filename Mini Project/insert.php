@@ -1,6 +1,5 @@
 <?php
 session_start();
-// Ensure only admins can access this page
 if (!isset($_SESSION["id"]) || $_SESSION["role"] != "admin") {
     header("Location: login.php");
     exit();
@@ -15,29 +14,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
     $email    = $_POST["email"];
-    $roles_id = $_POST["roles_id"]; // Role ID from the form (usually 2 for Student)
+    $roles_id = $_POST["roles_id"];
 
-    // Student Profile Data (Needed for the Dashboard Cards)
     $name     = $_POST["name"];
     $reg_no   = $_POST["reg_no"];
     $program  = $_POST["program"];
     $semester = $_POST["semester"];
     $gpa      = $_POST["gpa"];
 
-    // 1. First, Insert into the 'users' table
     $stmt1 = mysqli_prepare($conn, "INSERT INTO users (username, password, email, roles_id) VALUES (?, ?, ?, ?)");
     mysqli_stmt_bind_param($stmt1, "sssi", $username, $password, $email, $roles_id);
 
     if(mysqli_stmt_execute($stmt1)) {
-        // Get the ID of the user just created to link it to the student record
         $last_user_id = mysqli_insert_id($conn);
 
-        // 2. Second, Insert into the 'students' table using $last_user_id
         $stmt2 = mysqli_prepare($conn, "INSERT INTO students (reg_no, name, program, semester, gpa, status, email, user_id) VALUES (?, ?, ?, ?, ?, 'Active', ?, ?)");
         mysqli_stmt_bind_param($stmt2, "sssdssi", $reg_no, $name, $program, $semester, $gpa, $email, $last_user_id);
 
         if(mysqli_stmt_execute($stmt2)) {
-            // Success! Redirect to dashboard to see the new card
             header("Location: dashboard.php?msg=New student added successfully!");
             exit();
         } else {
