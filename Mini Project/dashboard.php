@@ -122,7 +122,7 @@ include("includes/header.php");
 
     <!-- Success Message -->
     <?php if (isset($_GET['msg'])): ?>
-        <div class="alert alert-success alert-dismissible fade show py-2" style="font-size:13px;">
+        <div class="alert alert-success alert-dismissible fade show py-2"">
             <i class="bi bi-check-circle me-1"></i><?php echo htmlspecialchars($_GET['msg']); ?>
             <button type="button" class="btn-close py-2" data-bs-dismiss="alert"></button>
         </div>
@@ -152,19 +152,19 @@ include("includes/header.php");
                 <div class="card-info">
                     <div class="student-name"><?php echo htmlspecialchars($s['name']); ?></div>
                     <p>
-                        <i class="bi bi-journals" style="font-size:11px;"></i>
+                        <i class="bi bi-journals"></i>
                         <?php echo htmlspecialchars($s['program']); ?><br>
 
-                        <i class="bi bi-calendar" style="font-size:11px;"></i>
+                        <i class="bi bi-calendar"></i>
                         Sem <?php echo $s['semester']; ?> &nbsp;|&nbsp;
                         <span style="color:<?php echo $gpa_color; ?>; font-weight:bold;">
                             GPA <?php echo number_format($s['gpa'], 2); ?>
                         </span><br>
 
-                        <i class="bi bi-envelope-at-fill" style="font-size:11px;"></i>
+                        <i class="bi bi-envelope-at-fill"></i>
                         <?php echo htmlspecialchars($s['email']); ?><br>
 
-                        <span class="badge bg-<?php echo $status_color; ?> mt-1" style="font-size:11px;">
+                        <span class="badge bg-<?php echo $status_color; ?> mt-1">
                             <?php echo $s['status']; ?>
                         </span>
                     </p>
