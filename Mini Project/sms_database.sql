@@ -57,7 +57,10 @@ CREATE TABLE `students` (
   `gpa` decimal(3,2) DEFAULT 0.00,
   `status` varchar(20) DEFAULT 'Active',
   `email` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `students_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -67,7 +70,7 @@ CREATE TABLE `students` (
 
 LOCK TABLES `students` WRITE;
 /*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES (1,'2025001','Afiq','Diploma IT',4,3.35,'Active','afiq@email.com'),(2,'2025002','Najhan','Diploma IT',4,3.92,'Active','najhan@email.com'),(3,'2025003','Awang','Diploma IT',4,4.00,'Active','awang@email.com'),(4,'2025004','Brandon','Diploma IT',4,3.67,'Active','brandon@email.com'),(5,'2025005','Wawan','Diploma IT',4,3.55,'Inactive','wawan@email.com'),(6,'2024006','Acenz','Diploma IT',4,3.50,'Active','acenz@email.com'),(7,'2024007','Danish','Diploma IT',4,2.80,'Inactive','danish@email.com');
+INSERT INTO `students` VALUES (1,'2025001','Afiq','Diploma IT',4,3.35,'Active','afiq@email.com',2),(2,'2025002','Najhan','Diploma IT',4,3.92,'Active','najhan@email.com',3),(3,'2025003','Awang','Diploma IT',4,4.00,'Active','awang@email.com',4),(4,'2025004','Brandon','Diploma IT',4,3.67,'Active','brandon@email.com',5),(5,'2025005','Wawan','Diploma IT',4,3.55,'Inactive','wawan@email.com',6),(6,'2024006','Acenz','Diploma IT',4,3.50,'Active','acenz@email.com',7),(7,'2024007','Danish','Diploma IT',4,2.80,'Inactive','danish@email.com',8);
 /*!40000 ALTER TABLE `students` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,7 +91,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `username` (`username`),
   KEY `roles_id` (`roles_id`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roles_id`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +100,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin123','admin@sms.com',1),(2,'student','student123','ahmad@email.com',2);
+INSERT INTO `users` VALUES (1,'admin','admin123','admin@sms.com',1),(2,'afiq','afiq111','afiq@email.com',2),(3,'najhan','najhan222','najhan@email.com',2),(4,'awang','awang333','awang@email.com',2),(5,'brandon','brandon444','brandon@email.com',2),(6,'wawan','wawan555','wawan@email.com',2),(7,'acenz','acenz666','acenz@email.com',2),(8,'danish','danish777','danish@email.com',2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -110,4 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-03-19 14:25:35
+-- Dump completed on 2026-03-28 23:45:26

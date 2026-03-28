@@ -15,8 +15,6 @@
             background: #eef0fc;
             font-family: Arial, sans-serif;
         }
-
-        /* ── Navbar ── */
         .navbar {
             background: #377adf !important;
         }
@@ -38,8 +36,6 @@
             border-radius: 20px;
             font-size: 12px;
         }
-
-        /* ── Student Card ── */
         .student-card {
             background: white;
             border-radius: 10px;
@@ -94,19 +90,15 @@
             display: flex;
             gap: 6px;
         }
-
-        /* ── Stat Card ── */
         .stat-card {
             background: white;
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            border-left: 4px solid #1a3c6e;
+            border-left: 4px solid #377adf;
         }
         .stat-card.green  { border-color: #01bd4f; }
         .stat-card.orange { border-color: #f1a31c; }
-
-        /* ── Form ── */
         .form-card {
             background: white;
             border-radius: 10px;
@@ -114,7 +106,7 @@
             overflow: hidden;
         }
         .form-card-header {
-            background: #1a3c6e;
+            background: #377adf;
             color: white;
             padding: 14px 20px;
             font-weight: bold;

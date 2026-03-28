@@ -1,6 +1,6 @@
 <?php
 session_start();
-/*if (!isset($_SESSION['id'])) { header("Location: login.php"); exit(); }*/
+if (!isset($_SESSION['id'])) { header("Location: login.php"); exit(); }
 
 require_once("config/app_config.php");
 
@@ -38,7 +38,7 @@ $page_title = "Dashboard - SMS";
 include("includes/header.php");
 ?>
 
-<div class="container-fluid px-4 mt-4">
+<div class="container-fluid mt-4">
 
     <!-- Stat Cards -->
     <div class="row g-3 mb-4">
@@ -101,7 +101,7 @@ include("includes/header.php");
                     </select>
                 </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary px-4">
+                    <button type="submit" class="btn btn-primary">
                         <i class="bi bi-funnel me-1"></i>Filter
                     </button>
                     <a href="dashboard.php" class="btn btn-outline-secondary ms-1">Clear</a>
@@ -152,16 +152,16 @@ include("includes/header.php");
                 <div class="card-info">
                     <div class="student-name"><?php echo htmlspecialchars($s['name']); ?></div>
                     <p>
-                        <i class="bi bi-book" style="font-size:11px;"></i>
+                        <i class="bi bi-journals" style="font-size:11px;"></i>
                         <?php echo htmlspecialchars($s['program']); ?><br>
 
-                        <i class="bi bi-calendar2" style="font-size:11px;"></i>
+                        <i class="bi bi-calendar" style="font-size:11px;"></i>
                         Sem <?php echo $s['semester']; ?> &nbsp;|&nbsp;
                         <span style="color:<?php echo $gpa_color; ?>; font-weight:bold;">
                             GPA <?php echo number_format($s['gpa'], 2); ?>
                         </span><br>
 
-                        <i class="bi bi-envelope" style="font-size:11px;"></i>
+                        <i class="bi bi-envelope-at-fill" style="font-size:11px;"></i>
                         <?php echo htmlspecialchars($s['email']); ?><br>
 
                         <span class="badge bg-<?php echo $status_color; ?> mt-1" style="font-size:11px;">
@@ -171,7 +171,7 @@ include("includes/header.php");
                 </div>
 
                 <!-- Admin -->
-                <?php /*if ($_SESSION['role'] == 'admin'): ?>
+                <?php if ($_SESSION['role'] == 'admin'): ?>
                 <div class="card-actions">
                     <a href="delete.php?id=<?php echo $s['id']; ?>"
                        onclick="return confirm('Delete <?php echo htmlspecialchars(addslashes($s['name'])); ?>?')"
@@ -183,14 +183,14 @@ include("includes/header.php");
                         <i class="bi bi-pencil"></i> Edit
                     </a>
                 </div>
-                <?php endif; */?>
+                <?php endif; ?>
 
             </div>
         </div>
 
         <?php endwhile; else: ?>
             <div class="col-12 text-center py-5 text-muted">
-                <i class="bi bi-search" style="font-size:40px;"></i>
+                <i class="bi-search" style="font-size:40px;"></i>
                 <p class="mt-2">No students found.</p>
             </div>
         <?php endif; ?>
