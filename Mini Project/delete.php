@@ -62,12 +62,12 @@ include("includes/header.php");
     <?php endif; ?>
 
     <div class="card border-0 shadow-sm">
-        <div class="card-header" style="background:#1a3c6e; color:white; font-weight:bold;">
+        <div class="card-header" style="background:#377adf; color:white; font-weight:bold;">
             <i class="bi bi-people me-2"></i>User List
         </div>
         <div class="card-body p-0">
             <table class="table table-hover mb-0">
-                <thead class="table-dark">
+                <thead class="table-primary">
                     <tr>
                         <th>ID</th>
                         <th>Username</th>
