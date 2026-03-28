@@ -7,7 +7,7 @@ if (!isset($_SESSION["id"]) || $_SESSION["role"] != "admin") {
 
 require_once("config/app_config.php");
 
-$message = "";
+$mesej = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     // User Account Data
@@ -35,10 +35,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: dashboard.php?msg=New student added successfully!");
             exit();
         } else {
-            $message = "Error creating student profile.";
+            $mesej = "Error creating student profile.";
         }
     } else {
-        $message = "Error creating user account.";
+        $mesej = "Error creating user account.";
     }
 }
 

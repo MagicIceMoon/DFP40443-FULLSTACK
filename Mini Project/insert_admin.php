@@ -7,7 +7,7 @@ if (!isset($_SESSION["id"]) || $_SESSION["role"] != "admin") {
 
 require_once("config/app_config.php");
 
-$message = "";
+$mesej = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: dashboard.php?msg=Admin just successfully registered!");
         exit();
     } else {
-        $message = "Ralat: Username may already exist or a database problem.";
+        $mesej = "Error: Username may already exist or a database problem.";
     }
 }
 

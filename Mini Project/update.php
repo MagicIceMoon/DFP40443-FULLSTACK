@@ -9,7 +9,6 @@ require_once("config/app_config.php");
 $id       = $_GET['id'] ?? 0;
 $programs = ['Full Stack Web Dev', 'Diploma IT', 'Diploma Computer Science', 'Diploma Business'];
 
-// Ambil data student
 $stmt = mysqli_prepare($conn, "SELECT * FROM students WHERE id = ?");
 mysqli_stmt_bind_param($stmt, "i", $id);
 mysqli_stmt_execute($stmt);
@@ -21,7 +20,6 @@ if (!$s) { header("Location: dashboard.php"); exit(); }
 
 $error = "";
 
-// Proses update
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name     = $_POST['name'];
     $email    = $_POST['email'];
