@@ -7,7 +7,7 @@ if (isset($_SESSION['id'])) {
     exit();
 }
 
-$error = "";
+$mesej = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -33,10 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: dashboard.php");
             exit();
         } else {
-            $error = "Invalid username or password!";
+            $mesej = "Invalid username or password!";
         }
     } else {
-        $error = "Invalid username or password!";
+        $mesej = "Invalid username or password!";
     }
 
     mysqli_stmt_close($stmt);
@@ -123,9 +123,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div class="login-body">
 
-        <?php if ($error): ?>
+        <?php if ($mesej): ?>
             <div class="alert alert-danger py-2" style="font-size:13px;">
-                <i class="bi bi-exclamation-circle me-1"></i><?php echo $error; ?>
+                <i class="bi bi-exclamation-circle me-1"></i><?php echo $mesej; ?>
             </div>
         <?php endif; ?>
 

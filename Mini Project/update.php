@@ -18,7 +18,7 @@ mysqli_stmt_close($stmt);
 
 if (!$s) { header("Location: dashboard.php"); exit(); }
 
-$error = "";
+$mesej = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name     = $_POST['name'];
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: dashboard.php?msg=Student updated successfully!");
         exit();
     } else {
-        $error = "Error: " . mysqli_stmt_error($stmt2);
+        $mesej = "Error: " . mysqli_stmt_error($stmt2);
     }
     mysqli_stmt_close($stmt2);
 }
@@ -51,8 +51,8 @@ include("includes/header.php");
         </div>
         <div class="form-card-body">
 
-            <?php if ($error): ?>
-                <div class="alert alert-danger"><?php echo $error; ?></div>
+            <?php if ($mesej): ?>
+                <div class="alert alert-danger"><?php echo $mesej; ?></div>
             <?php endif; ?>
 
             <form method="POST">
