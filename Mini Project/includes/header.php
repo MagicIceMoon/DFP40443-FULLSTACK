@@ -136,9 +136,16 @@
           </a>
         </li>
         <?php if(($_SESSION["role"] ?? "") == "admin"): ?>
-          <li class="nav-item" >
+          <li class="nav-item">
             <a class="nav-link" href="insert.php">
               <i class="bi bi-person-plus me-1"></i>Add Student
+            </a>
+          </li>
+          <?php endif; ?>
+          <?php if(($_SESSION["role"] ?? "") == "admin"): ?>
+          <li class="nav-item">
+            <a class="nav-link" href="insert_admin.php">
+              <i class="bi bi-shield-lock me-1"></i>Add Admin
             </a>
           </li>
           <?php endif; ?>
