@@ -7,7 +7,12 @@ if (!isset($_SESSION["id"]) || $_SESSION["role"] != "admin") {
 }
 
 require_once("config/app_config.php");
+<<<<<<< HEAD
 $maklumat = mysqli_query($conn,"SELECT users.id, users.username, users.email, roles.roles_name FROM users JOIN roles ON users.roles_id = roles.id");
+=======
+$maklumat = mysqli_query($conn,"SELECT users.id, users.username, users.email, roles.roles_name FROM
+                        users JOIN roles ON users.roles_id = roles.id");
+>>>>>>> eef7a19 (Mini Project)
 
 $mesej = "";
 

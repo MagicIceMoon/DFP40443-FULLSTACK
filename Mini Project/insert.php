@@ -10,7 +10,10 @@ require_once("config/app_config.php");
 $mesej = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
+<<<<<<< HEAD
     // User Account Data
+=======
+>>>>>>> eef7a19 (Mini Project)
     $username = $_POST["username"];
     $password = $_POST["password"];
     $email    = $_POST["email"];
@@ -28,7 +31,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if(mysqli_stmt_execute($stmt1)) {
         $last_user_id = mysqli_insert_id($conn);
 
+<<<<<<< HEAD
         $stmt2 = mysqli_prepare($conn, "INSERT INTO students (reg_no, name, program, semester, gpa, status, email, user_id) VALUES (?, ?, ?, ?, ?, 'Active', ?, ?)");
+=======
+        $stmt2 = mysqli_prepare($conn, "INSERT INTO students (reg_no, name, program, semester, gpa, status, email, user_id) VALUES
+        (?, ?, ?, ?, ?, 'Active', ?, ?)");
+>>>>>>> eef7a19 (Mini Project)
         mysqli_stmt_bind_param($stmt2, "sssdssi", $reg_no, $name, $program, $semester, $gpa, $email, $last_user_id);
 
         if(mysqli_stmt_execute($stmt2)) {

@@ -40,7 +40,11 @@ include("includes/header.php");
 
 <div class="container-fluid mt-4">
 
+<<<<<<< HEAD
     <!-- Stat Cards -->
+=======
+    <!-- Cards For Shows Students  -->
+>>>>>>> eef7a19 (Mini Project)
     <div class="row g-3 mb-4">
         <div class="col-6 col-md-4">
             <div class="stat-card">
@@ -49,7 +53,11 @@ include("includes/header.php");
                         <div style="font-size:28px; font-weight:bold; color:#1a3c6e;"><?php echo $total; ?></div>
                         <div style="font-size:13px;">Total Students</div>
                     </div>
+<<<<<<< HEAD
                     <i class="bi bi-people-fill" style="font-size:30px; color:#1a3c6e; opacity:0.5;"></i>
+=======
+                    <i class="bi bi-people-fill" style="font-size:30px; color:#1a3c6e;"></i>
+>>>>>>> eef7a19 (Mini Project)
                 </div>
             </div>
         </div>
@@ -60,7 +68,11 @@ include("includes/header.php");
                         <div style="font-size:28px; font-weight:bold; color:#27ae60;"><?php echo $active; ?></div>
                         <div style="font-size:13px;">Active</div>
                     </div>
+<<<<<<< HEAD
                     <i class="bi bi-person-check-fill" style="font-size:30px; color:#27ae60; opacity:0.5;"></i>
+=======
+                    <i class="bi bi-person-check-fill" style="font-size:30px; color:#27ae60;"></i>
+>>>>>>> eef7a19 (Mini Project)
                 </div>
             </div>
         </div>
@@ -71,7 +83,11 @@ include("includes/header.php");
                         <div style="font-size:28px; font-weight:bold; color:#e8a020;"><?php echo $inactive; ?></div>
                         <div style="font-size:13px;">Inactive</div>
                     </div>
+<<<<<<< HEAD
                     <i class="bi bi-person-dash-fill" style="font-size:30px; color:#e8a020; opacity:0.5;"></i>
+=======
+                    <i class="bi bi-person-dash-fill" style="font-size:30px; color:#e8a020;"></i>
+>>>>>>> eef7a19 (Mini Project)
                 </div>
             </div>
         </div>
