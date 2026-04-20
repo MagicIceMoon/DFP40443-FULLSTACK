@@ -1,9 +1,9 @@
 <?php
 
-$host = "localhost";
+$host = "127.0.0.1:3307";
 $user = "root";
 $pw = "";
-$db = "ecommerce_db";
+$db = "spmp";
 
 $conn = mysqli_connect($host,$user,$pw,$db);
 
